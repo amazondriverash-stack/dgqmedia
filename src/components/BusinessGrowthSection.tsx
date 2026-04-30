@@ -3,7 +3,11 @@ import { motion } from 'framer-motion'
 import businessGrowthIllustration from '../assets/1777020889c27f.png'
 import { useSectionParallax } from './Parallax'
 
-const BusinessGrowthSection: React.FC = () => {
+type Props = {
+  onStartOnboarding?: () => void
+}
+
+const BusinessGrowthSection: React.FC<Props> = ({ onStartOnboarding }) => {
   const sectionRef = useRef<HTMLElement>(null)
   const { ySlow, yMedium, yFast, scaleLift } = useSectionParallax({
     target: sectionRef,
@@ -46,12 +50,13 @@ const BusinessGrowthSection: React.FC = () => {
               style={{ y: yFast }}
               className="flex flex-col justify-center gap-3 pt-2 sm:flex-row lg:justify-start"
             >
-              <a
-                href="#booking"
-                className="inline-flex items-center justify-center rounded-full bg-brand-brown px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-cream shadow-sm ring-1 ring-black/5 transition hover:bg-brand-brown/95"
+              <button
+                type="button"
+                onClick={onStartOnboarding}
+                className="inline-flex items-center justify-center rounded-full bg-brand-brown px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-cream shadow-sm ring-1 ring-black/5 transition hover:bg-brand-brown/95 focus:outline-none focus:ring-2 focus:ring-brand-orange/50"
               >
-                Book a call
-              </a>
+                Start onboarding
+              </button>
               <a
                 href="#solutions"
                 className="inline-flex items-center justify-center rounded-full bg-white/70 px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-brown ring-1 ring-black/5 transition hover:bg-white"

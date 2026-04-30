@@ -48,7 +48,11 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 }
 
-export default function DuckMode() {
+type Props = {
+  onStartOnboarding?: () => void
+}
+
+export default function DuckMode({ onStartOnboarding }: Props) {
   const sectionRef = useRef<HTMLElement>(null)
   const { ySlow, yMedium, yFast } = useSectionParallax({ target: sectionRef, amplitude: 70 })
 
@@ -179,13 +183,14 @@ export default function DuckMode() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <a
-              href="#booking"
-              className="inline-flex items-center gap-2 rounded-full bg-brand-cream px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-brown transition hover:bg-white"
+            <button
+              type="button"
+              onClick={onStartOnboarding}
+              className="inline-flex items-center gap-2 rounded-full bg-brand-cream px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-brown transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange/50"
             >
-              Book a strategy call
+              Start onboarding
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </button>
             <a
               href="#solutions"
               className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-cream ring-1 ring-white/15 transition hover:bg-white/15"

@@ -5,7 +5,11 @@ import { Handshake, MapPin, ShieldCheck } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useSectionParallax } from './Parallax'
 
-export default function Hero() {
+type Props = {
+  onStartOnboarding?: () => void
+}
+
+export default function Hero({ onStartOnboarding }: Props) {
   const sectionRef = useRef<HTMLElement>(null)
   const { ySlow, yMedium, yFast, scaleLift } = useSectionParallax({
     target: sectionRef,
@@ -73,6 +77,13 @@ export default function Hero() {
             >
               Strategy
             </a>
+            <button
+              type="button"
+              onClick={onStartOnboarding}
+              className="rounded-full bg-brand-orange px-4 py-2 text-sm font-black uppercase tracking-[0.18em] text-brand-brown shadow-sm ring-1 ring-black/5 transition hover:bg-brand-amber focus:outline-none focus:ring-2 focus:ring-brand-orange/50"
+            >
+              Start
+            </button>
             <a
               href="#booking"
               className="rounded-full bg-brand-brown px-4 py-2 text-sm font-semibold text-brand-cream shadow-sm ring-1 ring-black/5 transition hover:bg-brand-brown/95"
