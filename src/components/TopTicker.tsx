@@ -4,10 +4,10 @@ type TickerItem = {
 }
 
 const items: TickerItem[] = [
-  { id: 'fuel-1', text: 'UseFuel: 48-hour audit → clear growth plan' },
-  { id: 'fuel-2', text: 'UseFuel: Local SEO + reviews engine (map pack focus)' },
-  { id: 'fuel-3', text: 'UseFuel: Conversion UX fixes that boost booked calls' },
-  { id: 'fuel-4', text: 'UseFuel: Core Web Vitals tuning (speed = leads)' },
+  { id: 'fuel-1', text: '48-hour audit → clear growth plan' },
+  { id: 'fuel-2', text: 'Local SEO + reviews engine (map pack focus)' },
+  { id: 'fuel-3', text: 'Conversion UX fixes that boost booked calls' },
+  { id: 'fuel-4', text: 'Core Web Vitals tuning (speed = leads)' },
 ]
 
 export default function TopTicker() {
@@ -16,7 +16,7 @@ export default function TopTicker() {
   return (
     <div
       className="sticky top-0 z-[60] border-b border-black/10 bg-brand-brown text-brand-cream"
-      aria-label="UseFuel information ticker"
+      aria-label="Information ticker"
     >
       <div className="relative overflow-hidden">
         <div
